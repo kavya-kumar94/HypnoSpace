@@ -11,7 +11,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: #599b83;
+  background-color: #74a9c3;
   background: -ms-radial-gradient(circle, #09716f, #000000);
   box-shadow: inset 0 0 1000px 0 rgb(44, 18, 104);
 
@@ -19,10 +19,10 @@
 
 audio {
   position: fixed;
-  left: 250px;
+  left: 650px;
   top: 10px;
   z-index: 10 !important;
-  width: calc(80% - 20px);
+  width: calc(50% - 20px);
 }
 
 audio:focus {
