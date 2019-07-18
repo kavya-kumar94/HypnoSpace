@@ -16,7 +16,7 @@ window.onload = function() {
     var canvas = document.getElementById("canvas");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    var ctx = canvas.getContext("2d");
+    var ctx = canvas.getContext("2d"), grd;
 
     src.connect(analyser);
     analyser.connect(context.destination);
@@ -45,21 +45,23 @@ window.onload = function() {
       x = Math.PI/2;
       barHeight = dataArray[0];
       analyser.getByteFrequencyData(dataArray);
-
+      
+      grd = ctx.createRadialGradient(150, 150, 0, 150, 150, 150);
+      grd.addColorStop(0, "red");
+      grd.addColorStop(0.2, "white");
+      grd.addColorStop(0.7, "green");
       // ctx.fillStyle = "blue";
       // ctx.strokeStyle = 'rgb(102, 204, 0)';
-      // ctx.strokeStyle = 'rgb(0, ' + Math.floor(255 - 42.5 * x) + ', ' +
-      //   Math.floor(255 - 42.5 * x * 2) + ')';
+      ctx.strokeStyle = 'rgb(0, ' + Math.floor(255 - 42.5 * x) + ', ' +
+        Math.floor(255 - 42.5 * x * 2) + ')';
       
       // ctx.fillRect(0, 0, WIDTH, HEIGHT);
       
       for (var i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i];
-        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
-        grd.addColorStop(0, "red");
-        grd.addColorStop(1, "white");
-        ctx.fillStyle = grd;
 
+
+        
         
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
@@ -67,15 +69,22 @@ window.onload = function() {
         ctx.lineTo(centerX + (barHeight * Math.cos(x + barWidth)), centerY + (barHeight * Math.sin(x + barWidth)));
         ctx.lineTo(centerX, centerY);
         ctx.closePath();
+        
+        //Fill Style
+        ctx.fillStyle = grd;
         // ctx.fillStyle= "blue";
         ctx.fill();
+
+
+        // Stroke Style
         // ctx.strokeStyle = 'rgb(0, ' + Math.floor(255 - 42.5 * i * 5) + ', ' +
         //   Math.floor(255 - 42.5 * i * 10) + ')';
         // ctx.stroke()
+
+        // Old Code
         // var r = barHeight + (25 * (i/bufferLength));
         // var g = 250 * (i/bufferLength);
         // var b = 50;
-
         // ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
         // ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
 
