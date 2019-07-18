@@ -98,7 +98,7 @@ window.onload = function() {
         maxBarHeight = barHeight;
       }
       ctx.beginPath();
-      ctx.arc(centerX, centerY, maxBarHeight*1.35, 0, 2 * Math.PI);
+      ctx.arc(centerX, centerY, maxBarHeight*1.3, 0, 2 * Math.PI);
       ctx.strokeStyle = 'rgba(41, 10, 89, 1.000)';
       ctx.stroke();
     }
