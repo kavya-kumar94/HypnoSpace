@@ -4,6 +4,7 @@ window.onload = function() {
   var audio = document.getElementById("audio");
   
   file.onchange = function() {
+  // audio.onload = function() {
     var files = this.files;
     audio.src = URL.createObjectURL(files[0]);
     audio.load();
@@ -45,23 +46,32 @@ window.onload = function() {
       barHeight = dataArray[0];
       analyser.getByteFrequencyData(dataArray);
 
-      // var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
-      // grd.addColorStop(0, "red");
-      // grd.addColorStop(1, "white");
-      // ctx.fillStyle = grd;
-      ctx.fillStyle = "blue";
+      // ctx.fillStyle = "blue";
+      // ctx.strokeStyle = 'rgb(102, 204, 0)';
+      // ctx.strokeStyle = 'rgb(0, ' + Math.floor(255 - 42.5 * x) + ', ' +
+      //   Math.floor(255 - 42.5 * x * 2) + ')';
       
       // ctx.fillRect(0, 0, WIDTH, HEIGHT);
-
+      
       for (var i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i];
+        var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+        grd.addColorStop(0, "red");
+        grd.addColorStop(1, "white");
+        ctx.fillStyle = grd;
+
+        
         ctx.beginPath();
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(centerX + (barHeight * Math.cos(x)), centerY + (barHeight * Math.sin(x)));
         ctx.lineTo(centerX + (barHeight * Math.cos(x + barWidth)), centerY + (barHeight * Math.sin(x + barWidth)));
         ctx.lineTo(centerX, centerY);
         ctx.closePath();
-        ctx.fill()
+        // ctx.fillStyle= "blue";
+        ctx.fill();
+        // ctx.strokeStyle = 'rgb(0, ' + Math.floor(255 - 42.5 * i * 5) + ', ' +
+        //   Math.floor(255 - 42.5 * i * 10) + ')';
+        // ctx.stroke()
         // var r = barHeight + (25 * (i/bufferLength));
         // var g = 250 * (i/bufferLength);
         // var b = 50;
