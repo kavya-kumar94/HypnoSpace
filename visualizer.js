@@ -29,32 +29,47 @@ window.onload = function() {
 
     var WIDTH = canvas.width;
     var HEIGHT = canvas.height;
+    const centerX = (WIDTH/2);
+    const centerY = (HEIGHT/2);
 
-    var barWidth = (WIDTH / bufferLength) * 2.5;
+    const pi2 = Math.PI*10;
+
+    var barWidth = (pi2 / bufferLength);
     var barHeight;
     var x = 0;
 
     function renderFrame() {
       requestAnimationFrame(renderFrame);
-
-      x = 0;
-
+      ctx.clearRect(0, 0, WIDTH, HEIGHT);
+      x = Math.PI/2;
+      barHeight = dataArray[0];
       analyser.getByteFrequencyData(dataArray);
 
-      ctx.fillStyle = "#000";
-      ctx.fillRect(0, 0, WIDTH, HEIGHT);
+      // var grd = ctx.createRadialGradient(75, 50, 5, 90, 60, 100);
+      // grd.addColorStop(0, "red");
+      // grd.addColorStop(1, "white");
+      // ctx.fillStyle = grd;
+      ctx.fillStyle = "blue";
+      
+      // ctx.fillRect(0, 0, WIDTH, HEIGHT);
 
       for (var i = 0; i < bufferLength; i++) {
         barHeight = dataArray[i];
-        
-        var r = barHeight + (25 * (i/bufferLength));
-        var g = 250 * (i/bufferLength);
-        var b = 50;
+        ctx.beginPath();
+        ctx.moveTo(centerX, centerY);
+        ctx.lineTo(centerX + (barHeight * Math.cos(x)), centerY + (barHeight * Math.sin(x)));
+        ctx.lineTo(centerX + (barHeight * Math.cos(x + barWidth)), centerY + (barHeight * Math.sin(x + barWidth)));
+        ctx.lineTo(centerX, centerY);
+        ctx.closePath();
+        ctx.fill()
+        // var r = barHeight + (25 * (i/bufferLength));
+        // var g = 250 * (i/bufferLength);
+        // var b = 50;
 
-        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
-        ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+        // ctx.fillStyle = "rgb(" + r + "," + g + "," + b + ")";
+        // ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
 
-        x += barWidth + 1;
+        x += barWidth;
       }
     }
 
