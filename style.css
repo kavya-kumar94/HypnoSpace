@@ -105,3 +105,10 @@ button:focus {
   80% {background:#48304d;}
   100%  {background:#0b3f5c;}
 }
+
+
+#scene-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
