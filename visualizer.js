@@ -2,17 +2,26 @@ window.onload = function() {
   
   var file = document.getElementById("thefile");
   var audio = document.getElementById("audio");
+  console.log("check");
 
   file.onchange = function() {
+    console.dir(audio);
+    // let oldCanvas = document.getElementById('myCanvas');
+    // oldCanvas.style.display = "none";
     var files = this.files;
     audio.src = URL.createObjectURL(files[0]);
     audio.load();
     audio.play();
-    var context = new AudioContext();
-    var src = context.createMediaElementSource(audio);
+    
+    let context = new AudioContext();
+   
+   
+    src = context.createMediaElementSource(audio);
+    
+    
     var analyser = context.createAnalyser();
 
-    var canvas = document.getElementById("canvas");
+    var canvas = document.getElementById("myCanvas");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     var ctx = canvas.getContext("2d");
@@ -108,3 +117,5 @@ window.onload = function() {
     renderFrame();
   };
 };
+
+// export default renderFrame;

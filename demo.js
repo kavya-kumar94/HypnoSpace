@@ -1,18 +1,34 @@
 
 function buttonClick() {
+   let nodes = document.querySelectorAll('canvas');
+    if (nodes[0].style.display !== "block") {
+        window.cancelAnimationFrame(window.anim);
+        nodes[0].style.display = "block";
+        nodes[1].style.display = "none";
+    } 
+
+    console.log("test");
     var audio = document.getElementById("audio");
+    audio.src = "music/sunflower.mp3";
+    console.dir(audio);
     audio.load();
-    audio.play();
-    var context = new AudioContext();
-    var src = context.createMediaElementSource(audio);
+    function isPlaying(audio) { 
+        return !audio.paused;
+     }
+
+        audio.play();
+    
+    let context = new window.AudioContext();
+    window.src = context.createMediaElementSource(audio);
+    // window.src = src;
     var analyser = context.createAnalyser();
 
-    var canvas = document.getElementById("canvas");
+    var canvas = document.getElementById("myCanvas");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     var ctx = canvas.getContext("2d");
 
-    src.connect(analyser);
+    window.src.connect(analyser);
     analyser.connect(context.destination);
 
     analyser.fftSize = 256;
@@ -34,14 +50,15 @@ function buttonClick() {
     var x = 0;
 
     function renderFrame() {
-        requestAnimationFrame(renderFrame);
+        let frame = requestAnimationFrame(renderFrame);
+        window.frame = frame;
         ctx.clearRect(0, 0, WIDTH, HEIGHT);
         x = Math.PI / 2;
         barHeight = dataArray[0];
 
         analyser.getByteFrequencyData(dataArray);
 
-        grd = ctx.createRadialGradient(centerX, centerY, 40, centerX, centerY, 100);
+        let grd = ctx.createRadialGradient(centerX, centerY, 40, centerX, centerY, 100);
         grd.addColorStop(0, 'rgba(41, 10, 89, 1.000)');
         grd.addColorStop(0.3, 'rgba(255, 124, 0, 1.000)');
         grd.addColorStop(0.6, "#8E4142");
@@ -84,3 +101,5 @@ function buttonClick() {
     audio.play();
     renderFrame();
 }
+
+export default buttonClick;

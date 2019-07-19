@@ -18,78 +18,26 @@
     </style>
 </head>
 <body>
-    <div id="content">
+    <!-- <div id="content"> -->
       <input type="file" id="thefile" accept="audio/*" />
-            <button onclick="buttonClick();">Play Demo</button>
+            <button id="demo">Play Demo</button>
+            <button id="stars">Stars</button>
+            <button id="plane">Plane</button>
             <!-- <button onclick="renderFrame();">Classic</button>
-            <button onclick="buttonClick();">Petal</button> -->
-            <script src="demo.js">
-            </script>
+                <button onclick="buttonClick();">Petal</button> -->
+                <!-- <script src="demo.js">
+                </script> -->
 
 
-      <audio id="audio" src="music/sunflower.mp3" controls></audio>
-      <!-- <canvas id="canvas">
-    </canvas> -->
-      <!-- <script>
-          var canvas = document.getElementById('myCanvas');
-          var context = canvas.getContext('2d');
-          var centerX = canvas.w idth / 2;
-          var centerY = canvas.height / 2;
-          var radius = 70;
-          
-          context.beginPath();
-          context.arc(centerX, centerY, radius, 0, 2 * Math.PI, false);
-          context.fillStyle = 'green';
-          context.fill();
-          context.lineWidth = 5;
-          context.strokeStyle = '#003300';
-          context.stroke();
-        </script> -->
-
-    </div>
-        <script src="js/three.js"></script>
-        <script>
-            var scene = new THREE.Scene();
-            var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-            var renderer = new THREE.WebGLRenderer();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-            document.body.appendChild(renderer.domElement);
-            
-            var starsGeometry = new THREE.Geometry();
-
-                for (var i = 0; i < 10000; i++) {
-
-                    var star = new THREE.Vector3();
-                    star.x = THREE.Math.randFloatSpread(1000);
-                    star.y = THREE.Math.randFloatSpread(1000);
-                    star.z = THREE.Math.randFloatSpread(1000);
-
-                    starsGeometry.vertices.push(star);
-                    starsGeometry.morphAttributes = {};
-
-                }
-                var starsMaterial = new THREE.PointsMaterial({ 
-                    color: 0x888888
-                });
-
-                var starField = new THREE.Points(starsGeometry, starsMaterial);
-                scene.add(starField);
-                camera.position.z = 5;
-
-                    var animate = function () {
-                        requestAnimationFrame(animate);
-
-                        starField.rotation.x += 0.01;
-                        starField.rotation.y += 0.01;
-                        renderer.render(scene, camera);
-                    };
-
-                    animate();
-        </script>
-    
-        <!-- <script src="visualizer.js"></script> -->
-        <!-- <script src="3.js"></script> -->
+<audio id="audio" controls></audio>
+<canvas id="myCanvas">
+</canvas>
+<!-- </div> -->
+<script src="bundle.js"></script>
+<!-- <script src="visualizer.js"></script> -->
+<!-- <script src="stars.js"></script>
+<script src="js/three.js"></script> -->
+<!-- <script src="3.js"></script> -->
 </body>
 </html>
 

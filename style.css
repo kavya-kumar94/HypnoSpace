@@ -24,7 +24,7 @@
   outline: none;
 }
 
-#canvas {
+#myCanvas {
   position: fixed;
   left: 0;
   top: 0;
@@ -52,7 +52,7 @@ audio:focus {
   outline: none;
 }
 
-button {
+#demo {
   position: fixed;
   left: 10px;
   top: 35px;
@@ -68,7 +68,7 @@ button {
   transition: all .2s ease-in-out;
 }
 
-button:hover {
+#demo:hover {
   transform: scale(1.1);
 }
 
@@ -76,6 +76,45 @@ button:focus {
   outline: none;
 }
 
+
+#stars {
+  position: fixed;
+  left: 10px;
+  top: 75px;
+  z-index: 150; 
+
+  margin-top: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  /* text-align: center; */
+  transition: all .2s ease-in-out;
+}
+
+#stars:hover {
+  transform: scale(1.1);
+}
+#plane {
+  position: fixed;
+  left: 10px;
+  top: 115px;
+  z-index: 150; 
+
+  margin-top: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  /* text-align: center; */
+  transition: all .2s ease-in-out;
+}
+
+#plane:hover {
+  transform: scale(1.1);
+}
 
 /* .animate {
     height: 200px;
