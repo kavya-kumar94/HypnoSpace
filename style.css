@@ -1,8 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap');
+
 #thefile {
   position: fixed;
   top: 10px;
   left: 10px;
   z-index: 100;
+  background-color: white;
+  font-family: 'Source Sans Pro', sans-serif;
+  /* width: 80px;
+  height: 30px; */
+  border-radius: 20px;
+  font-size: 13px;
+  padding: 2px;
+  /* text-align: center; */
+  transition: all .2s ease-in-out;
+}
+
+#thefile:hover {
+  transform: scale(1.1);
+}
+
+#thefile:focus {
+  outline: none;
 }
 
 #canvas {
@@ -26,5 +45,29 @@ audio {
 }
 
 audio:focus {
+  outline: none;
+}
+
+button {
+  position: fixed;
+  left: 10px;
+  top: 35px;
+  z-index: 150; 
+
+  margin-top: 5px;
+  font-family: 'Source Sans Pro', sans-serif;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  /* text-align: center; */
+  transition: all .2s ease-in-out;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+button:focus {
   outline: none;
 }
