@@ -104,7 +104,6 @@ window.onload = function() {
       ctx.strokeStyle = 'rgba(41, 10, 89, 1.000)';
       ctx.stroke();
     }
-
     audio.play();
     renderFrame();
   };

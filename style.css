@@ -33,8 +33,8 @@
   /* background-color: #74a9c3;
   background: -ms-radial-gradient(circle, #09716f, #000000);
   box-shadow: inset 0 0 1000px 0 rgb(44, 18, 104); */
-  -webkit-animation: animate_bg 10s;
-  animation: animate_bg 10s;
+  -webkit-animation: animate_bg 20s;
+  animation: animate_bg 20s;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
 
