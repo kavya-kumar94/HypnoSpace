@@ -68,10 +68,12 @@ window.onload = function() {
         ctx.moveTo(centerX, centerY);
         ctx.lineTo(centerX + (barHeight * Math.cos(x)), centerY + (barHeight * Math.sin(x)));
         ctx.lineTo(centerX + (barHeight * Math.cos(x + barWidth)), centerY + (barHeight * Math.sin(x + barWidth)));
+        ctx.fillStyle = grd;
+        ctx.fill();
         ctx.lineTo(centerX, centerY);
         ctx.closePath();
-        ctx.strokeStyle = grd;
-        ctx.stroke();
+        // ctx.strokeStyle = grd;
+        // ctx.stroke();
       
         //Fill Style
         // grd = ctx.createLinearGradient(50, 50, 0, 150, 150);

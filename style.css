@@ -38,10 +38,10 @@
 
 audio {
   position: fixed;
-  left: 650px;
+  left: 900px;
   top: 10px;
   z-index: 10 !important;
-  width: calc(50% - 20px);
+  width: calc(30% - 20px);
 }
 
 audio:focus {
