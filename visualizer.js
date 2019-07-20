@@ -15,7 +15,6 @@ window.onload = function() {
     
     let context = new AudioContext();
    
-   
     src = context.createMediaElementSource(audio);
     
     

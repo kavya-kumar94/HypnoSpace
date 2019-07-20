@@ -12,11 +12,14 @@ function buttonClick() {
     audio.src = "music/sunflower.mp3";
     console.dir(audio);
     audio.load();
+   
     function isPlaying(audio) { 
         return !audio.paused;
      }
 
-        audio.play();
+     if (!isPlaying(audio)) {
+         audio.play();
+     }
     
     let context = new window.AudioContext();
     window.src = context.createMediaElementSource(audio);
