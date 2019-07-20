@@ -28,7 +28,9 @@ import planeActions from './plane';
 
 
     var scene = new THREE.Scene();
+    var group = new THREE.Group();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 100;
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
@@ -39,9 +41,9 @@ import planeActions from './plane';
     for (var i = 0; i < 10000; i++) {
 
         var star = new THREE.Vector3();
-        star.x = THREE.Math.randFloatSpread(1000);
-        star.y = THREE.Math.randFloatSpread(1000);
-        star.z = THREE.Math.randFloatSpread(1000);
+        star.x = THREE.Math.randFloatSpread(2000);
+        star.y = THREE.Math.randFloatSpread(2000);
+        star.z = THREE.Math.randFloatSpread(2000);
 
         starsGeometry.vertices.push(star);
         starsGeometry.morphAttributes = {};
@@ -52,10 +54,19 @@ import planeActions from './plane';
     });
 
     var starField = new THREE.Points(starsGeometry, starsMaterial);
-
-    scene.add(starField);
     
+    scene.add(starField);
+
+    // scene.add(group);
+
+    var geometry = new THREE.SphereGeometry(15, 32, 32);
+    var material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    var sphere = new THREE.Mesh(geometry, material);
+    scene.add(sphere);
+
+
     function animate() {
+        // debugger;
         let anim = requestAnimationFrame(animate);
         window.anim = anim;
         starField.rotation.x += 0.01;
