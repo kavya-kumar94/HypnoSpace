@@ -3,28 +3,20 @@ import buttonClick from './demo';
 import renderFrame from './visualizer';
 import planeActions from './plane';
 
-// let nodes = document.querySelectorAll('canvas');
-// if (nodes[0].style.display !== "block") {
-//     window.cancelAnimationFrame(window.anim);
-//     nodes[0].style.display = "block";
-//     nodes[1].style.display = "none";
-// }
-
 // var audio = document.getElementById("audio");
 // audio.src = "music/sunflower.mp3";
-// console.dir(audio);
 // audio.load();
 
-// let context = new window.AudioContext();
-// src = context.createMediaElementSource(audio);
-// var analyser = context.createAnalyser();
+// let ctx2 = new window.AudioContext();
+// window.src2 = ctx2.createMediaElementSource(audio);
+// var analyser = ctx2.createAnalyser();
 
 // var canvas = document.getElementById("myCanvas");
 // canvas.width = window.innerWidth;
 // canvas.height = window.innerHeight;
-// var ctx = canvas.getContext("2d");
+// var context = canvas.getContext("2d");
 
-// window.src.connect(analyser);
+// window.src2.connect(analyser);
 // analyser.connect(context.destination);
 
 // analyser.fftSize = 256;
@@ -33,17 +25,6 @@ import planeActions from './plane';
 // console.log(bufferLength);
 
 // var dataArray = new Uint8Array(bufferLength);
-
-// var WIDTH = canvas.width;
-// var HEIGHT = canvas.height;
-// const centerX = (WIDTH / 2);
-// const centerY = (HEIGHT / 2);
-
-// const pi2 = Math.PI * 10;
-
-// var barWidth = (pi2 / bufferLength);
-// var barHeight;
-// var x = 0;
 
 
     var scene = new THREE.Scene();
@@ -99,4 +80,4 @@ import planeActions from './plane';
 
 document.getElementById("demo").addEventListener("click", buttonClick);
 document.getElementById("stars").addEventListener("click", animate);
-document.getElementById("plane").addEventListener("click", planeActions);
+// document.getElementById("plane").addEventListener("click", planeActions);

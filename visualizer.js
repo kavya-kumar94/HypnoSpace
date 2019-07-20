@@ -15,7 +15,8 @@ window.onload = function() {
     
     let context = new AudioContext();
    
-    src = context.createMediaElementSource(audio);
+   
+    let src = context.createMediaElementSource(audio);
     
     
     var analyser = context.createAnalyser();
