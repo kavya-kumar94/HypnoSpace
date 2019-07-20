@@ -28,10 +28,10 @@ import planeActions from './plane';
 
 
     var scene = new THREE.Scene();
-    var group = new THREE.Group();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 100;
-
+    var analyser, uniforms;
+    
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
@@ -58,20 +58,20 @@ import planeActions from './plane';
     scene.add(starField);
 
     // scene.add(group);
-
-    var geometry = new THREE.SphereGeometry(15, 32, 32);
-    var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
-    var sphere = new THREE.Mesh(geometry, material);
-    scene.add(sphere);
+       var geometry = new THREE.IcosahedronGeometry(10, 4);
+       var material = new THREE.MeshBasicMaterial({
+           color: 0xffffff,
+       });
+       var sphere = new THREE.Mesh(geometry, material);
+       scene.add(sphere);
+       
 
 
     function animate() {
-        // debugger;
         let anim = requestAnimationFrame(animate);
         window.anim = anim;
         starField.rotation.x += 0.01;
         // starField.rotation.y += 0.01;
-
         
         let nodes = document.querySelectorAll('canvas');
         if (nodes[1].style.display !== "block") {
@@ -79,15 +79,10 @@ import planeActions from './plane';
             nodes[1].style.display = "block";
             nodes[0].style.display = "none";
         };
-        // let oldCanvas = document.getElementById('myCanvas');
-        // oldCanvas.style.display = "none";
+
         renderer.render(scene, camera);
     };
     
-    // audio.play();
-    // animate();
-
-// export default animate;
 
 document.getElementById("demo").addEventListener("click", buttonClick);
 document.getElementById("stars").addEventListener("click", animate);
