@@ -60,7 +60,7 @@ import planeActions from './plane';
     // scene.add(group);
 
     var geometry = new THREE.SphereGeometry(15, 32, 32);
-    var material = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+    var material = new THREE.MeshBasicMaterial({ color: 0xffffff });
     var sphere = new THREE.Mesh(geometry, material);
     scene.add(sphere);
 
