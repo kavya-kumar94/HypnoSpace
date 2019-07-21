@@ -3,38 +3,38 @@ import buttonClick from './demo';
 import renderFrame from './visualizer';
 import planeActions from './plane';
 
+
 // var audio = document.getElementById("audio");
 // audio.src = "music/sunflower.mp3";
 // audio.load();
 
-// let ctx2 = new window.AudioContext();
-// window.src2 = ctx2.createMediaElementSource(audio);
-// var analyser = ctx2.createAnalyser();
+//     window.context = new window.AudioContext();
+//     // window.src2 = ctx2.createMediaElementSource(audio);
+//     var analyser = context.createAnalyser();
 
-// var canvas = document.getElementById("myCanvas");
-// canvas.width = window.innerWidth;
-// canvas.height = window.innerHeight;
-// var context = canvas.getContext("2d");
-
-// window.src2.connect(analyser);
-// analyser.connect(context.destination);
-
-// analyser.fftSize = 256;
-
-// var bufferLength = analyser.frequencyBinCount;
-// console.log(bufferLength);
-
-// var dataArray = new Uint8Array(bufferLength);
 
 
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     camera.position.z = 100;
-    var analyser, uniforms;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(renderer.domElement);
+
+    // var canvas = document.querySelectorAll('canvas')[1];
+    // canvas.width = window.innerWidth;
+    // canvas.height = window.innerHeight;
+    // var context = canvas.getContext("2d");
+    // window.src.connect(analyser);
+    // analyser.connect(context.destination);
+
+    // analyser.fftSize = 256;
+
+    // var bufferLength = analyser.frequencyBinCount;
+    // console.log(bufferLength);
+
+    // var dataArray = new Uint8Array(bufferLength);
 
     var starsGeometry = new THREE.Geometry();
 
@@ -82,7 +82,6 @@ import planeActions from './plane';
 
         renderer.render(scene, camera);
     };
-    
 
 document.getElementById("demo").addEventListener("click", buttonClick);
 document.getElementById("stars").addEventListener("click", animate);

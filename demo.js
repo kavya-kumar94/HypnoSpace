@@ -7,10 +7,10 @@ function buttonClick() {
         nodes[1].style.display = "none";
     } 
 
-    console.log("test");
+    // console.log("test");
     var audio = document.getElementById("audio");
     audio.src = "music/sunflower.mp3";
-    console.dir(audio);
+    // console.dir(audio);
     audio.load();
     audio.play();
     // function isPlaying(audio) { 
@@ -21,7 +21,7 @@ function buttonClick() {
     //      audio.play();
     //  }
     
-    let context = new window.AudioContext();
+    window.context = new window.AudioContext();
     window.src = context.createMediaElementSource(audio);
     // window.src = src;
     var analyser = context.createAnalyser();
@@ -30,7 +30,6 @@ function buttonClick() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     var ctx = canvas.getContext("2d");
-
     window.src.connect(analyser);
     analyser.connect(context.destination);
 
