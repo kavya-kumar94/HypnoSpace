@@ -72,7 +72,7 @@ import planeActions from './plane';
         window.anim = anim;
         starField.rotation.x += 0.01;
         // starField.rotation.y += 0.01;
-        
+        buttonClick();
         let nodes = document.querySelectorAll('canvas');
         if (nodes[1].style.display !== "block") {
             // window.cancelAnimationFrame(window.frame);

@@ -9,7 +9,7 @@ function buttonClick() {
 
     // console.log("test");
     var audio = document.getElementById("audio");
-    audio.src = "music/sunflower.mp3";
+    audio.src = "music/cucumber_water.mp3";
     // console.dir(audio);
     audio.load();
     audio.play();
@@ -20,11 +20,13 @@ function buttonClick() {
     //  if (!isPlaying(audio)) {
     //      audio.play();
     //  }
-    
-    window.context = new window.AudioContext();
-    window.src = context.createMediaElementSource(audio);
+    if (this.src === undefined) {
+        // Build element
+        window.context = new window.AudioContext();
+        window.src = context.createMediaElementSource(audio);
+        var analyser = context.createAnalyser();
+    }
     // window.src = src;
-    var analyser = context.createAnalyser();
 
     var canvas = document.getElementById("myCanvas");
     canvas.width = window.innerWidth;
