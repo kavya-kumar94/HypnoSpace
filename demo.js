@@ -58,8 +58,9 @@ function buttonClick() {
 
         let grd = ctx.createRadialGradient(centerX, centerY, 40, centerX, centerY, 100);
         grd.addColorStop(0, 'rgba(41, 10, 89, 1.000)');
-        grd.addColorStop(0.5, 'rgba(255, 124, 0, 1.000)');
-        grd.addColorStop(0.8, "#cf8e25");
+        // grd.addColorStop(0.5, 'rgba(255, 124, 0, 1.000)');
+        grd.addColorStop(0.7, "#b01279");
+        grd.addColorStop(1, "#3f0fa6");
         // grd.addColorStop(0.6, "#8E4142");
 
 
@@ -94,7 +95,8 @@ function buttonClick() {
         ctx.beginPath();
         ctx.arc(centerX, centerY, maxBarHeight * 1.2, 0, 2 * Math.PI);
         // ctx.strokeStyle = 'white';
-        ctx.strokeStyle = '#edb353';
+        ctx.strokeStyle = '#834ab5';
+        // ctx.strokeStyle = '#b01279';
         ctx.stroke();
     }
 
