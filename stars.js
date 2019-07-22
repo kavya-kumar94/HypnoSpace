@@ -164,6 +164,6 @@ import planeActions from './plane';
         animate();
 // };
 
-// document.getElementById("demo").addEventListener("click", buttonClick);
+document.getElementById("demo").addEventListener("click", buttonClick);
 // document.getElementById("stars").addEventListener("click", animate);
 // document.getElementById("plane").addEventListener("click", planeActions);
