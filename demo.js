@@ -25,7 +25,7 @@ function buttonClick() {
     canvas.style.position = 'absolute';
     var ctx = canvas.getContext("2d");
     container.appendChild(canvas);
-    
+
     window.src.connect(analyser);
     analyser.connect(context.destination);
 
@@ -92,7 +92,7 @@ function buttonClick() {
         }
         ctx.beginPath();
         ctx.arc(centerX, centerY, maxBarHeight * 1.3, 0, 2 * Math.PI);
-        ctx.strokeStyle = 'rgba(41, 10, 89, 1.000)';
+        ctx.strokeStyle = 'yellow';
         ctx.stroke();
     }
 
