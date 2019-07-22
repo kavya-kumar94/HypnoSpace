@@ -58,8 +58,9 @@ function buttonClick() {
 
         let grd = ctx.createRadialGradient(centerX, centerY, 40, centerX, centerY, 100);
         grd.addColorStop(0, 'rgba(41, 10, 89, 1.000)');
-        grd.addColorStop(0.3, 'rgba(255, 124, 0, 1.000)');
-        grd.addColorStop(0.6, "#8E4142");
+        grd.addColorStop(0.5, 'rgba(255, 124, 0, 1.000)');
+        grd.addColorStop(0.8, "#cf8e25");
+        // grd.addColorStop(0.6, "#8E4142");
 
 
         for (var i = 0; i < bufferLength; i++) {
@@ -91,8 +92,9 @@ function buttonClick() {
             maxBarHeight = barHeight;
         }
         ctx.beginPath();
-        ctx.arc(centerX, centerY, maxBarHeight * 1.3, 0, 2 * Math.PI);
-        ctx.strokeStyle = 'yellow';
+        ctx.arc(centerX, centerY, maxBarHeight * 1.2, 0, 2 * Math.PI);
+        // ctx.strokeStyle = 'white';
+        ctx.strokeStyle = '#edb353';
         ctx.stroke();
     }
 
