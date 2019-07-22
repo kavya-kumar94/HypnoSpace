@@ -18,13 +18,17 @@ window.onload = function() {
    
     let src = context.createMediaElementSource(audio);
     
+
     
     var analyser = context.createAnalyser();
 
     var canvas = document.getElementById("myCanvas");
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    canvas.style.position = 'absolute';
     var ctx = canvas.getContext("2d");
+    container.appendChild(canvas);
+
 
     src.connect(analyser);
     analyser.connect(context.destination);
