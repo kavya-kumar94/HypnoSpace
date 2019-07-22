@@ -20,6 +20,12 @@
   transform: scale(1.1);
 }
 
+p {
+  position: fixed;
+  top: 0px;
+  left: 500px;
+}
+
 #thefile:focus {
   outline: none;
 }
