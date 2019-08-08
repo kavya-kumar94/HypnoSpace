@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Bungee+Shade|Orbitron|Press+Start+2P&display=swap');
 #thefile {
   position: fixed;
-  top: 10px;
-  left: 10px;
+  bottom: 105px;
+  left: 20px;
   z-index: 100;
   background-color: white;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   /* width: 80px;
   height: 30px; */
   border-radius: 20px;
   font-size: 13px;
-  padding: 2px;
+  padding: 6px;
+  width: 200px;
   /* text-align: center; */
   transition: all .2s ease-in-out;
 }
@@ -49,7 +50,7 @@ p {
 audio {
   position: fixed;
   left: 900px;
-  top: 10px;
+  bottom: 10px;
   z-index: 10 !important;
   width: calc(30% - 20px);
 }
@@ -60,13 +61,15 @@ audio:focus {
 
 #demo {
   position: fixed;
-  left: 10px;
-  top: 35px;
+  left: 20px;
+  bottom: 125px;
   z-index: 150; 
+  font-weight: bolder;
+  margin-bottom: 30px;
+  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Press Start 2P', cursive; */
 
-  margin-top: 5px;
-  font-family: 'Source Sans Pro', sans-serif;
-  width: 100px;
+  width: 200px;
   height: 30px;
   border-radius: 20px;
   font-size: 16px;
@@ -76,6 +79,67 @@ audio:focus {
 
 #demo:hover {
   transform: scale(1.1);
+}
+#play:hover {
+  transform: scale(1.1);
+}
+#pause:hover {
+  transform: scale(1.1);
+}
+#mute:hover {
+  transform: scale(1.1);
+}
+
+#play {
+  position: fixed;
+  left: 20px;
+  bottom: 75px;
+  z-index: 150; 
+  font-weight: bolder;
+  margin-bottom: 30px;
+  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Press Start 2P', cursive; */
+
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  /* text-align: center; */
+  transition: all .2s ease-in-out;
+}
+#pause {
+  position: fixed;
+  left: 20px;
+  bottom: 55px;
+  z-index: 150; 
+  font-weight: bolder;
+  /* margin-bottom: 30px; */
+  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Press Start 2P', cursive; */
+
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  /* text-align: center; */
+  transition: all .2s ease-in-out;
+}
+#mute {
+  position: fixed;
+  left: 20px;
+  bottom: 10px;
+  z-index: 150; 
+  font-weight: bolder;
+  /* margin-bottom: 30px; */
+  font-family: 'Orbitron', sans-serif;
+  /* font-family: 'Press Start 2P', cursive; */
+
+  width: 200px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 16px;
+  /* text-align: center; */
+  transition: all .2s ease-in-out;
 }
 
 button:focus {
@@ -90,7 +154,7 @@ button:focus {
   z-index: 150; 
 
   margin-top: 5px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   width: 100px;
   height: 30px;
   border-radius: 20px;
@@ -156,4 +220,61 @@ button:focus {
   position: absolute;
   width: 100%;
   height: 100%;
+}
+
+#info {
+  position: absolute;
+	top: 10px;
+  width: 100%;
+  font-family: 'Bungee Shade', cursive;
+	text-align: center;
+	z-index: 100;
+  display:block;
+  /* margin: auto; */
+  font-size: 50px;
+  color: white;
+  font-weight: bolder;
+  transition: all 0.5s;
+}
+
+#info {
+  text-shadow: 0px 1px 0px #7b68ee,
+  0px 1px 15px rgba(0,0,0,0.2),
+  0px 2px 0px #7b68ee,
+  0px 3px 0px #7b68ee,
+  0px 4px 0px #7b68ee,
+  0px 5px 0px #7b68ee,
+  0px 6px 0px #7b68ee,
+  0px 7px 0px #7b68ee,
+  0px 8px 0px #7b68ee,
+  0px 9px 0px #7b68ee,
+  0px 10px 0px #7b68ee,
+  0px 11px 0px #7b68ee,
+  0px 12px 0px #7b68ee,
+  0px 20px 30px rgba(0,0,0,0.5);
+
+}
+
+#info:hover {
+    /* animation-name: rotate; 
+    animation-duration: 2s; 
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; */
+    transform: scaleX(-1);
+
+}
+
+#tagline {
+  position: absolute;
+  top: 90px;
+  font-family: 'Orbitron', sans-serif;
+	width: 100%;
+	text-align: center;
+  z-index: 100;
+  padding-top: 10px;
+  display:block;
+  margin: auto;
+  font-size: 15px;
+  color: white;
+  font-weight: bolder;
 }

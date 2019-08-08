@@ -9,7 +9,6 @@ import planeActions from './plane';
     // var file = document.getElementById("thefile");
     // var audio = document.getElementById("audio");
     // console.log("check");
-
     
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -47,6 +46,7 @@ import planeActions from './plane';
     var starField = new THREE.Points(starsGeometry, starsMaterial);
     
     scene.add(starField);
+
 
     //    var geometry = new THREE.IcosahedronGeometry(10, 4);
     //    var material = new THREE.MeshBasicMaterial({
@@ -163,6 +163,8 @@ import planeActions from './plane';
         // renderFrame();
         animate();
 // };
+
+
 
 document.getElementById("demo").addEventListener("click", buttonClick);
 // document.getElementById("stars").addEventListener("click", animate);

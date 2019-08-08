@@ -31,9 +31,22 @@
             <button onclick="buttonClick();">Petal</button> -->
             <!-- <script src="demo.js">
             </script> -->
-            
-            
-            <audio id="audio" controls></audio>
+            <audio id="audio"></audio>
+            <script>
+                var myAudio = document.getElementById("audio");
+                    function togglePlay() {
+                        return myAudio.paused ? myAudio.play() : myAudio.pause();
+                    };
+            </script>
+            <div>
+                <!-- <button id="play" onclick="document.getElementById('audio').play()">Play</button> -->
+                <!-- onclick="document.getElementById('audio').pause()" -->
+                <button id="pause" onclick="togglePlay()">Play/Pause</button>
+                <button id="mute" onclick="document.getElementById('audio').muted=!document.getElementById('audio').muted">Mute/
+                    Unmute</button>
+            </div>
+            <div id="info">HYPNOSPACE</div>
+            <div id="tagline">Click the play demo button or upload your own audio file!</div>
             <canvas id="myCanvas">
             </canvas>
 <!-- </div> -->
