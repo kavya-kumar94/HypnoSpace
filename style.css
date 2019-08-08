@@ -224,7 +224,7 @@ button:focus {
 
 #info {
   position: absolute;
-	top: 10px;
+	top: 5px;
   width: 100%;
   font-family: 'Bungee Shade', cursive;
 	text-align: center;
@@ -266,7 +266,7 @@ button:focus {
 
 #tagline {
   position: absolute;
-  top: 90px;
+  top: 80px;
   font-family: 'Orbitron', sans-serif;
 	width: 100%;
 	text-align: center;
