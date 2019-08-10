@@ -278,3 +278,19 @@ button:focus {
   color: white;
   font-weight: bolder;
 }
+
+#nom {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-family: 'Orbitron', sans-serif;
+	/* width: 100%; */
+	/* text-align: center; */
+  z-index: 100;
+  padding: 1.5%;
+  display:block;
+  margin: auto;
+  font-size: 18px;
+  color: white;
+  font-weight: bolder;
+}
