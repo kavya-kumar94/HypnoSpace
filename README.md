@@ -22,7 +22,7 @@ Challenges during this project include layering multiple layers of canvas elemen
 The user can upload their own audio files and watch the visuals change, or click the "Play Demo" button to see a sample song play.
 
 <p align="center">
-    <img width="600" height="375" src="https://github.com/kavya-kumar94/cravings/blob/master/ezgif.com-video-to-gif.gif">
+    <img width="600" height="375" src="hypnospace_demo.gif">
 </p>
 
 ### Code Snippets
