@@ -15,9 +15,7 @@ The [three.js](https://threejs.org/) lirary was used to create a 3D animated bac
 
 Challenges during this project include layering multiple layers of canvas elements and utilizing multiple libraries simultaneously.
 
-### Key Features
-
-#### Audio Upload
+### Features
 
 The user can upload their own audio files and watch the visuals change, or click the "Play Demo" button to see a sample song play.
 
@@ -67,4 +65,44 @@ function renderFrame() {
     audio.play();
     renderFrame();
   };
+```
+
+#### Create animated background with three.js
+```js
+var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    camera.position.z = 100;
+    
+    window.container = document.createElement('div');
+    container.style.position = 'relative';
+    document.body.appendChild(container);
+
+    var renderer = new THREE.WebGLRenderer();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+    let node = document.querySelectorAll('canvas')[1]
+    node.style.position = 'absolute';
+    container.appendChild(node);
+   
+
+    var starsGeometry = new THREE.Geometry();
+
+    for (var i = 0; i < 10000; i++) {
+
+        var star = new THREE.Vector3();
+        star.x = THREE.Math.randFloatSpread(2000);
+        star.y = THREE.Math.randFloatSpread(2000);
+        star.z = THREE.Math.randFloatSpread(2000);
+
+        starsGeometry.vertices.push(star);
+        starsGeometry.morphAttributes = {};
+
+    }
+    var starsMaterial = new THREE.PointsMaterial({
+        color: 0x888888
+    });
+
+    var starField = new THREE.Points(starsGeometry, starsMaterial);
+    
+    scene.add(starField);
 ```
