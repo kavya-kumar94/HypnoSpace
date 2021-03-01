@@ -20,6 +20,6 @@
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.6",
     "simplex-noise": "^2.4.0",
-    "three": "^0.106.2"
+    "three": "^0.125.0"
   }
 }
